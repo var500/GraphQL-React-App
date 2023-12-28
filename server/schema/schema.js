@@ -10,16 +10,19 @@ const { GraphQLObjectType,
 
 // dummy data
 var books = [
-  { name: "Name of the Wind", genre: "Fantasy", id: "1", authorid:"1" },
-  { name: "The Final Empire", genre: "Fantasy", id: "2", authorid:"2" },
-  { name: "The Long Earth", genre: "Sci-Fi", id: "3", authorid:"3" },
+    { name: 'Name of the Wind', genre: 'Fantasy', id: '1', authorId: '1' },
+    { name: 'The Final Empire', genre: 'Fantasy', id: '2', authorId: '2' },
+    { name: 'The Hero of Ages', genre: 'Fantasy', id: '4', authorId: '2' },
+    { name: 'The Long Earth', genre: 'Sci-Fi', id: '3', authorId: '3' },
+    { name: 'The Colour of Magic', genre: 'Fantasy', id: '5', authorId: '3' },
+    { name: 'The Light Fantastic', genre: 'Fantasy', id: '6', authorId: '3' },
 ];
 
 var authors = [
-  {name:"Robert Frost", age:68, id:"1"},
-  {name:"Terry Pratchett", age:48, id:"2"},
-  {name:"John Keats", age:44, id:"3"},
-]
+    { name: 'Patrick Rothfuss', age: 44, id: '1' },
+    { name: 'Brandon Sanderson', age: 42, id: '2' },
+    { name: 'Terry Pratchett', age: 66, id: '3' }
+];
 
 // define a new type
 const BookType = new GraphQLObjectType({
@@ -31,7 +34,7 @@ const BookType = new GraphQLObjectType({
     author:{
       type:AuthorType,
       resolve(parent,args){
-        return _.find(authors, { id: parent.authorid });
+        return _.find(authors, { id: parent.authorId });
       }
     }
   }), // wrap in a es6 function
