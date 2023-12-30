@@ -8,6 +8,7 @@ const {
   GraphQLID,
   GraphQLInt,
   GraphQLList,
+  GraphQLNonNull
 } = graphql;
 
 const Book = require('../model/book');
@@ -86,7 +87,7 @@ const Mutation = new GraphQLObjectType({
     addAuthor: {
       type: AuthorType,
       args: {
-        name: { type: GraphQLString },
+        name: { type: new GraphQLNonNull(GraphQLString) }, // Either Define in schema or use this prop both give same results 
         age: { type: GraphQLInt }
       },
       resolve(parent, args){
