@@ -1,8 +1,14 @@
-"use client"
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from "@apollo/client";
+"use client";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 
 //Components
 import { BookList } from "../components/BookList";
+import { AddBook } from "@/components/AddBook";
 
 // apollo client setup
 const httpLink = createHttpLink({
@@ -20,6 +26,7 @@ export default function Home() {
       <div id="main" className="p-4">
         <h1 className="text-2xl font-bold p-4">My Library</h1>
         <BookList />
+        <AddBook />
       </div>
     </ApolloProvider>
   );
