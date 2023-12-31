@@ -1,4 +1,5 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { getBooksquery } from "@/queries/queries";
 
 interface Book {
   id: string;
@@ -6,15 +7,6 @@ interface Book {
   genre: string;
   authorId: string;
 }
-
-const getBooksquery = gql`
-  query books {
-    books {
-      name
-      id
-    }
-  }
-`;
 
 export function BookList() {
   const { loading, error, data } = useQuery<{ books: Book[] }>(getBooksquery);
@@ -26,11 +18,7 @@ export function BookList() {
     <div>
       <ul className="mx-12 list-disc">
         {data
-          ? data.books.map((book) => (
-              <li key={book.id}>
-                {book.name}
-              </li>
-            ))
+          ? data.books.map((book) => <li key={book.id}>{book.name}</li>)
           : null}
       </ul>
     </div>
