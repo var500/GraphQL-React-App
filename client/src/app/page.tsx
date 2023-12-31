@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <ApolloProvider client={client}>
       <div id="main">
+        <h1>My Library</h1>
         <BookList />
       </div>
     </ApolloProvider>
