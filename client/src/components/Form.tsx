@@ -5,19 +5,25 @@ interface AppFormProps {
 }
 
 export function AppForm({ authors }: AppFormProps) {
-  const [bookName, setBookName] = useState();
+  const [bookName, setBookName] = useState("");
   const [genre, setGenre] = useState();
-
+  const [authorId, setAuthorId] = useState();
   const handleBookName = (event: any) => {
     setBookName(event.target.value);
   };
   const handleGenreChange = (event: any) => {
     setGenre(event.target.value);
   };
+  const handleAuthorId = (event: any) => {
+    setAuthorId(event.target.value);
+  };
 
-  useEffect(() => {
-    console.log({ genre, bookName });
-  }, [handleBookName, handleGenreChange]);
+  const handleFormData = (event:any) => {
+    event.preventDefault();
+    console.log({ bookName, genre, authorId });
+  };
+
+  useEffect(() => {}, [handleBookName, handleGenreChange]);
 
   return (
     <form>
@@ -64,10 +70,11 @@ export function AppForm({ authors }: AppFormProps) {
             htmlFor="Author Name"
             className="block text-sm font-medium leading-6 text-gray-900"
           >
-            Book Name
+            Author id
           </label>
 
           <select
+            onChange={handleAuthorId}
             id="Author name"
             name="Author name"
             autoComplete="Author name"
@@ -82,7 +89,11 @@ export function AppForm({ authors }: AppFormProps) {
           </select>
         </div>
         <div className="mt-1 ">
-          <button className="bg-blue-800 hover:bg-blue-300 rounded-full px-4 py-2 text-white">
+          <button
+            onClick={handleFormData}
+            
+            className="bg-blue-800 hover:bg-blue-300 rounded-full px-4 py-2 text-white"
+          >
             +
           </button>
         </div>
