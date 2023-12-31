@@ -1,13 +1,24 @@
+import { useMutation } from "@apollo/client";
 import { useEffect, useState } from "react";
+import { addBookMutation, getBooksquery } from "@/queries/queries";
 
 interface AppFormProps {
   authors?: string[][];
+}
+
+interface AddBook {
+  name: string;
+  id: string;
 }
 
 export function AppForm({ authors }: AppFormProps) {
   const [bookName, setBookName] = useState("");
   const [genre, setGenre] = useState();
   const [authorId, setAuthorId] = useState();
+  const [addBook, { data: addBookData }] = useMutation<{ addBook: AddBook }>(
+    addBookMutation
+  );
+
   const handleBookName = (event: any) => {
     setBookName(event.target.value);
   };
@@ -18,9 +29,16 @@ export function AppForm({ authors }: AppFormProps) {
     setAuthorId(event.target.value);
   };
 
-  const handleFormData = (event:any) => {
+  const handleFormData = async (event: any) => {
     event.preventDefault();
-    console.log({ bookName, genre, authorId });
+    const result = await addBook({
+      variables: {
+        name: bookName,
+        genre: genre,
+        authorId: authorId,
+      }
+    });
+    console.log(result.data?.addBook);
   };
 
   useEffect(() => {}, [handleBookName, handleGenreChange]);
@@ -91,7 +109,6 @@ export function AppForm({ authors }: AppFormProps) {
         <div className="mt-1 ">
           <button
             onClick={handleFormData}
-            
             className="bg-blue-800 hover:bg-blue-300 rounded-full px-4 py-2 text-white"
           >
             +
