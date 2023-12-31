@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { AppForm } from "./Form";
-import { getAuthorsquery, addBookMutation } from "@/queries/queries";
+import { getAuthorsquery } from "@/queries/queries";
 
 interface Authors {
   name: string;
@@ -11,7 +11,6 @@ export function AddBook() {
   const { loading, error, data:authorsData } = useQuery<{ authors: Authors[] }>(
     getAuthorsquery
   );
-
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
