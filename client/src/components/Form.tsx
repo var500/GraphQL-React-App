@@ -36,7 +36,8 @@ export function AppForm({ authors }: AppFormProps) {
         name: bookName,
         genre: genre,
         authorId: authorId,
-      }
+      },
+      refetchQueries:[{query: getBooksquery}]
     });
     console.log(result.data?.addBook);
   };
