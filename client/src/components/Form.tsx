@@ -31,7 +31,7 @@ export function AppForm({ authors }: AppFormProps) {
 
   const handleFormData = async (event: any) => {
     event.preventDefault();
-    const result = await addBook({
+    await addBook({
       variables: {
         name: bookName,
         genre: genre,
