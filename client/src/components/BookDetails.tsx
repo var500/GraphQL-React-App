@@ -30,7 +30,7 @@ export function BookDetails(bookId: BookDetailsProps) {
     },
   });
 
-  if (error) return <p>Error: {error.message}</p>;
+
 
   // Access the data returned by the query
   const bookData: BookDetailsResponse = data?.book;
