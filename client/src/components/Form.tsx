@@ -109,7 +109,7 @@ export function AppForm({ authors }: AppFormProps) {
         <div className="mt-1 flex justify-center">
           <button
             onClick={handleFormData}
-            className="bg-blue-800 hover:bg-blue-300 rounded-full px-4 py-2 w-32 mt-20 text-white"
+            className="bg-red-400 hover:bg-blue-300 rounded-full px-4 py-2 w-32 mt-20 text-white"
           >
             ADD
           </button>

@@ -24,8 +24,8 @@ export default function Home() {
   return (
     <ApolloProvider client={client}>
       <div id="main" className="p-5 box-border w-3/5 h-full">
-        <h1 className="text-2xl font-bold p-4 justify-center flex w-full">
-          My Library
+        <h1 className="text-2xl font-bold p-4 text-red-600 justify-center flex w-full">
+          My Reading List
         </h1>
         <div className="max-h-72">
           <BookList />
