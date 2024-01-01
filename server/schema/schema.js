@@ -91,6 +91,10 @@ const Mutation = new GraphQLObjectType({
         age: { type: GraphQLInt }
       },
       resolve(parent, args){
+        const checkAuthor = Author.findOne({name:args.name});
+        if(checkAuthor){
+          return {success:false, message:"Author Already Exists"}
+        }
         let author = new Author({
           name: args.name,
           age: args.age
@@ -106,6 +110,10 @@ const Mutation = new GraphQLObjectType({
         authorId:{type:GraphQLID}
       },
       resolve(parent, args){
+        const checkBook = Book.findOne({name:args.name});
+        if(checkBook){
+          return {success:false, message:"Book Already Exists"}
+        }
         let book = new Book ({
           name: args.name,
           genre: args.genre,
