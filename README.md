@@ -10,11 +10,13 @@ GraphQL data manupulation and retrieval
 <h3 align="center">Full-Stack Application with Next.js</h3>
 
 
-[![React](https://img.shields.io/badge/-React-blue?logo=React)](https://reactjs.org/)
-[![React Hook Form](https://img.shields.io/badge/-Next.js-6E36F6?logo=Next.js&logoColor=black&color=blue)](https://react-hook-form.com/)
-[![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?logo=Tailwind%20CSS&logoColor=black&color=blue)](https://tailwindcss.com/)
-[![JavaScript](https://img.shields.io/badge/-JavaScript-FFA500?logo=JavaScript&logoColor=yello&color=blue)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![MongoDB](https://img.shields.io/badge/-Mongodb%20-blue?logo=MongoDB)](https://www.mongodb.com/)
+[![React](https://img.shields.io/badge/-React-blue?logo=React&logoColor=white)](https://reactjs.org/)
+[![React Hook Form](https://img.shields.io/badge/-Next.js-6E36F6?logo=Next.js&logoColor=white&color=blue)](https://react-hook-form.com/)
+[![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?logo=Tailwind%20CSS&logoColor=white&color=blue)](https://tailwindcss.com/)
+[![Typescript](https://img.shields.io/badge/-TypeScript-FFA500?logo=TypeScript&logoColor=white&color=blue)](https://developer.mozilla.org/en-US/docs/Web/TypeScript)
+[![MongoDB](https://img.shields.io/badge/-Mongodb%20-blue?logo=MongoDB&logoColor=white)](https://www.mongodb.com/)
+[![Apollo Client](https://img.shields.io/badge/-Apollo%20Client-311C87?logo=Apollo-GraphQL&color=blue)](https://www.apollographql.com/docs/react/)
+
 
 </div>
 
