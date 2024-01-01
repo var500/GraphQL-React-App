@@ -12,7 +12,8 @@ interface Book {
 
 export function BookList() {
   const { loading, error, data } = useQuery<{ books: Book[] }>(getBooksquery);
-  const [bookId, setBookId] = useState("");
+  const [bookId, setBookId] = useState(data?.books[0]?.id || "");
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
@@ -20,10 +21,19 @@ export function BookList() {
     <div>
       <ul className="mx-12 list-disc">
         {data
-          ? data.books.map((book) => <li key={book.id} onClick={(e) => {setBookId(book.id)}}>{book.name}</li>)
+          ? data.books.map((book) => (
+              <li
+                key={book.id}
+                onClick={(e) => {
+                  setBookId(book.id);
+                }}
+              >
+                {book.name}
+              </li>
+            ))
           : null}
       </ul>
-      <BookDetails bookId={ bookId } />
+      {bookId && <BookDetails bookId={bookId} />}
     </div>
   );
 }
