@@ -1,10 +1,7 @@
-# GraphQL-React-App
-GraphQL data manupulation and retrieval
 
-<div id="top"></div>
-
+<h3 align="center">GraphQL-React-App</h3>
 <!-- PROJECT LOGO -->
-<br />
+
 <div align="center">
 
 <h3 align="center">Full-Stack Application with Next.js</h3>
