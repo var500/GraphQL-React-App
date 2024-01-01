@@ -12,17 +12,18 @@ interface Book {
 
 export function BookList() {
   const { loading, error, data } = useQuery<{ books: Book[] }>(getBooksquery);
-  const [bookId, setBookId] = useState(data?.books[0]?.id || "");
+  const [bookId, setBookId] = useState(data?.books[0]?.id || undefined); // undefined so that the component always loads
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div>
-      <ul className="mx-12 list-disc">
+      <ul className="p-0 list-disc">
         {data
           ? data.books.map((book) => (
               <li
+                className="inline-block m-3 p-3 border-r-4 border-red-400 border hover:shadow-xl cursor-pointer"
                 key={book.id}
                 onClick={(e) => {
                   setBookId(book.id);
@@ -33,7 +34,7 @@ export function BookList() {
             ))
           : null}
       </ul>
-      {bookId && <BookDetails bookId={bookId} />}
+      {<BookDetails bookId={bookId} />}
     </div>
   );
 }

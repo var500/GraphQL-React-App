@@ -45,12 +45,12 @@ export function AppForm({ authors }: AppFormProps) {
   useEffect(() => {}, [handleBookName, handleGenreChange]);
 
   return (
-    <form>
+    <form className=" p-5 fixed left-0 bottom-0 w-3/5">
       <div className="space-y-2 mt-10">
         <div className="mt-1">
           <label
             htmlFor="Book-name"
-            className="flex text-sm font-medium leading-6 text-gray-900"
+            className="flex text-sm font-bold leading-6 text-gray-900 text-right"
           >
             Book name
           </label>
@@ -69,7 +69,7 @@ export function AppForm({ authors }: AppFormProps) {
         <div className="mt-1">
           <label
             htmlFor="Genre"
-            className="flex text-sm font-medium leading-6 text-gray-900"
+            className="flex text-sm font-bold leading-6 text-gray-900"
           >
             Genre
           </label>
@@ -84,10 +84,10 @@ export function AppForm({ authors }: AppFormProps) {
             className="flex rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
         </div>
-        <div className="sm:col-span-3">
+        <div className="mt-1">
           <label
             htmlFor="Author Name"
-            className="block text-sm font-medium leading-6 text-gray-900"
+            className="block text-sm font-bold leading-6 text-gray-900"
           >
             Author id
           </label>

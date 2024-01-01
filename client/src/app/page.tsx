@@ -23,7 +23,7 @@ const client = new ApolloClient({
 export default function Home() {
   return (
     <ApolloProvider client={client}>
-      <div id="main" className="p-4">
+      <div id="main" className="p-5 box-border w-3/5 h-full">
         <h1 className="text-2xl font-bold p-4">My Library</h1>
         <BookList />
         <AddBook />
