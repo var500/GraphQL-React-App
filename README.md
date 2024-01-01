@@ -52,13 +52,19 @@ PORT=
 CONNECTION_STRING=
 ```
 
-4. Start the development server for frontend by running the following command:
+4. Update the env file for the client
+
+```bash
+BACKEND_URL=
+```
+
+5. Start the development server for frontend by running the following command:
 
 ```bash
 npm run dev
 ```
 
-5. Start the development server for backend by running the following command:
+6. Start the development server for backend by running the following command:
 
 ```bash
 npm run start
