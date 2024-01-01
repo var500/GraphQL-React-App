@@ -12,7 +12,7 @@ import { AddBook } from "@/components/AddBook";
 
 // apollo client setup
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000/graphql",
+  uri: process.env.BACKEND_URL,
 });
 const cache = new InMemoryCache();
 const client = new ApolloClient({
