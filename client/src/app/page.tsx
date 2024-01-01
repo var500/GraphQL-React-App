@@ -11,14 +11,16 @@ import { BookList } from "../components/BookList";
 import { AddBook } from "@/components/AddBook";
 
 // apollo client setup
+const URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 const httpLink = createHttpLink({
-  uri: process.env.BACKEND_URL,
+  uri: URL,
 });
 const cache = new InMemoryCache();
 const client = new ApolloClient({
   link: httpLink,
   cache: cache,
 });
+
 
 export default function Home() {
   return (
