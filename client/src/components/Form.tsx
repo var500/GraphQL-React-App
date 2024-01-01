@@ -39,7 +39,6 @@ export function AppForm({ authors }: AppFormProps) {
       },
       refetchQueries: [{ query: getBooksquery }],
     });
-    console.log(result.data?.addBook);
   };
 
   useEffect(() => {}, [handleBookName, handleGenreChange]);

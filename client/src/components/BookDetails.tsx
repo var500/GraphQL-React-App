@@ -34,7 +34,6 @@ export function BookDetails(bookId: BookDetailsProps) {
 
   // Access the data returned by the query
   const bookData: BookDetailsResponse = data?.book;
-  console.log(bookData);
   return (
     <div
       id="book-details"
