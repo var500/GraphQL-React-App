@@ -14,7 +14,6 @@ export function BookList() {
   const { loading, error, data } = useQuery<{ books: Book[] }>(getBooksquery);
   const [bookId, setBookId] = useState(data?.books[0]?.id || undefined); // undefined so that the component always loads
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
